@@ -10,11 +10,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { Rodape } from './rodape/rodape';
 
 
 @NgModule({
   declarations: [
-    Cabecalho
+    Cabecalho,
+    Rodape
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { MatSelectModule } from '@angular/material/select';
   ],
 
   exports: [
-    Cabecalho
+    Cabecalho,
+    Rodape
   ]
 
 })
