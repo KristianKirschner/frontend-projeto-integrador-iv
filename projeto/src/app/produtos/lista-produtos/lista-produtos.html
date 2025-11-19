@@ -1,0 +1,36 @@
+<div class="list-container">
+  <div class="list-card">
+
+    <div class="list-header">
+      <h2>Produtos</h2>
+      <a routerLink="/admin/produtos/novo" class="add-btn">Novo Produto</a>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Preço</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let p of produtos">
+          <td>{{ p.nome }}</td>
+          <td>R$ {{ p.preco }}</td>
+          <td class="status" [class.inativo]="p.status === 'Inativo'">
+            {{ p.status }}
+          </td>
+
+          <td>
+            <a class="action-link" [routerLink]="['/admin/produtos', p.id]">Editar</a> |
+            <a class="action-link delete-link" (click)="excluir(p.id)">Excluir</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
